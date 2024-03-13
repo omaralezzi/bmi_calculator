@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
-import 'input_page.dart ';
+import 'input_page.dart';
 
-void main() => runApp(BMICalculator());
+void main() {
+  runApp(BMICalculator());
+}
 
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor:
-            Colors.grey, // Set the primary color for certain components
+        primaryColor: Colors.grey,
         appBarTheme: AppBarTheme(
-          backgroundColor:
-              Color(0xFF0F101D), // Set the background color for the AppBar
+          backgroundColor: Color(0xFF0F101D),
         ),
-        scaffoldBackgroundColor:
-            Color(0xFF0F101D), // Set the background color of the entire app
+        scaffoldBackgroundColor: Color(0xFF0F101D),
         textTheme: TextTheme(
           headline6: TextStyle(
-            color: Colors.white, // Set the text color for the title
+            color: Colors.white,
           ),
           bodyText1: TextStyle(
-            color: Colors.white, // Set the text color for body
+            color: Colors.white,
           ),
           bodyText2: TextStyle(
-            color: Colors.white, // Set the text color for body
+            color: Colors.white,
           ),
         ),
       ),
