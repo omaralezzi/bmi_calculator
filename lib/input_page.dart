@@ -141,7 +141,7 @@ class _InputPageState extends State<InputPage> {
             ),
             child: Center(
               child: Text(
-                'Pink Card',
+                'Cal BMI',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
