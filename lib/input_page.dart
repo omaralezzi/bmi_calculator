@@ -13,6 +13,7 @@ class _InputPageState extends State<InputPage> {
         title: Center(
           child: Text(
             'BMI CALCULATOR',
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         centerTitle: true, // Center the title
@@ -130,6 +131,23 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
               ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+              color: Colors.pink, // Set the background color for the card
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Center(
+              child: Text(
+                'Pink Card',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ),
         ],
