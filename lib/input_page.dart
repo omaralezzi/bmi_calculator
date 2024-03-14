@@ -24,32 +24,40 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                buildContainer(label: '1.1'),
-                buildContainer(label: '1.2'),
+                CustomContainer(label: '1.1'),
+                CustomContainer(label: '1.2'),
               ],
             ),
           ),
-          buildContainer(label: '2'),
+          CustomContainer(label: '2'),
           Expanded(
             child: Row(
               children: [
-                buildContainer(label: '3.1'),
-                buildContainer(label: '3.2'),
+                CustomContainer(label: '3.1'),
+                CustomContainer(label: '3.2'),
               ],
             ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height *
                 0.1, // 10% of screen height
-            child: buildContainer(label: 'Pink Card', color: Colors.pink),
+            child: CustomContainer(label: 'Pink Card', color: Colors.pink),
           ),
         ],
       ),
     );
   }
+}
 
-  Expanded buildContainer(
-      {String? label, Color color = const Color(0xFF1D1E33)}) {
+class CustomContainer extends StatelessWidget {
+  final String label;
+  final Color color;
+
+  const CustomContainer(
+      {required this.label, this.color = const Color(0xFF1D1E33)});
+
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(15.0),
@@ -59,7 +67,7 @@ class _InputPageState extends State<InputPage> {
         ),
         child: Center(
           child: Text(
-            label!,
+            label,
             style: TextStyle(
               fontSize: 34.0,
               fontWeight: FontWeight.bold,
