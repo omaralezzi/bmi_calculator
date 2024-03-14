@@ -24,133 +24,50 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33), // Set the background color
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '1.1',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    // Add content for the first sub-container here
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33), // Set the background color
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '1.2',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    // Add content for the second sub-container here
-                  ),
-                ),
+                buildContainer(label: '1.1'),
+                buildContainer(label: '1.2'),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1E33), // Set the background color
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Center(
-                child: Text(
-                  '2',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              // Add content for the second container here
-            ),
-          ),
+          buildContainer(label: '2'),
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33), // Set the background color
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '3.1',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    // Add content for the third sub-container here
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33), // Set the background color
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '3.2',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    // Add content for the fourth sub-container here
-                  ),
-                ),
+                buildContainer(label: '3.1'),
+                buildContainer(label: '3.2'),
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(15.0),
-            decoration: BoxDecoration(
-              color: Colors.pink, // Set the background color for the card
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: Center(
-              child: Text(
-                'Cal BMI',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height *
+                0.1, // 10% of screen height
+            child: buildContainer(label: 'Pink Card', color: Colors.pink),
           ),
         ],
+      ),
+    );
+  }
+
+  Expanded buildContainer(
+      {String? label, Color color = const Color(0xFF1D1E33)}) {
+    return Expanded(
+      child: Container(
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: color, // Set the background color
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Center(
+          child: Text(
+            label!,
+            style: TextStyle(
+              fontSize: 34.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        // Add content for the container here
       ),
     );
   }
